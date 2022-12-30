@@ -45,12 +45,12 @@ Access it at your configured url, please note that the moodle instance may takes
 
 After moodle is initialized, go to Site administration and perform the following configuration.
 
-###LTI
+### LTI
 Go to Plugins->Authentication->Manage authentication, Enable LTI
 Go to Plugins->Enrolments->Manage enrol plugins, Enable Publish as LTI tool
 
 
-###Jobeinabox
+### Jobeinabox
 Go to Plugins->Question types->CodeRunner,
 Modify the field Jobe server" to "jobe",
 Modify the Jobe API-key to be blank.
