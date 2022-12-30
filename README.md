@@ -47,16 +47,17 @@ After moodle is initialized, go to Site administration and perform the following
 
 ### LTI
 Go to Plugins->Authentication->Manage authentication, Enable LTI
+
 Go to Plugins->Enrolments->Manage enrol plugins, Enable Publish as LTI tool
 
 
 ### Jobeinabox
 Go to Plugins->Question types->CodeRunner,
-Modify the field Jobe server" to "jobe",
-Modify the Jobe API-key to be blank.
+Modify the field "Jobe server" to "jobe",
+Modify the field "Jobe API-key" to be blank.
 
 Go to General->Security->HTTP security,
-Modify the cURL blocked hosts list to be blank.
+Modify the field "cURL blocked hosts list" to be blank.
 
 
 
