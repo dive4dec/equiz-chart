@@ -1,7 +1,7 @@
-## Equiz-chart
+# Equiz-chart
 Helm chart for E-Quiz.
 
-# Building and pushing custom images
+## Building and pushing custom images
 
 Build the docker image from the "docker" folder
 Build the Jobeinabox image from https://github.com/dive4dec/jobeinabox
@@ -13,7 +13,7 @@ docker build --no-cache -t localhost:32000/bitnami_moodle_custom:test1 .
 docker push localhost:32000/bitnami_moodle_custom:test1
 ```
 
-# Setup a Moodle instance using Kubernetes
+## Setup a Moodle instance using Kubernetes
 
 Go to helm-chart folder
 
@@ -45,14 +45,12 @@ Access it at your configured url, please note that the moodle instance may takes
 
 After moodle is initialized, go to Site administration and perform the following configuration.
 
-For LTI,
-
+###LTI
 Go to Plugins->Authentication->Manage authentication, Enable LTI
 Go to Plugins->Enrolments->Manage enrol plugins, Enable Publish as LTI tool
 
 
-For Jobeinabox,
-
+###Jobeinabox
 Go to Plugins->Question types->CodeRunner,
 Modify the field Jobe server" to "jobe",
 Modify the Jobe API-key to be blank.
