@@ -1,11 +1,13 @@
 # Equiz-chart
 Helm chart for E-Quiz.
 
-## Building and pushing custom images
+## Building and pushing the custom images
 
-Build the docker image from the "docker" folder
-Build the Jobeinabox image from https://github.com/dive4dec/jobeinabox
-Push the images to localhost or dockerhub
+Build the docker image from the "docker" folder<br />
+
+Build the Jobeinabox image from https://github.com/dive4dec/jobeinabox<br />
+
+Push the images to localhost or dockerhub<br />
 
 Exmaple of building the moodle image and push to localhost:
 ```
