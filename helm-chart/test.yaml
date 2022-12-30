@@ -1,0 +1,33 @@
+global:
+  image:
+    registry: docker.io
+    repository: yzhou442/equiz-docker
+    tag: v4
+    digest: ""
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+    debug: false
+    websiteUrl: deep.cs.cityu.edu.hk/test
+    reverseProxy: '"true"'
+    sslProxy: '"true"'
+
+
+    
+
+  moodleEmail: equiz@cs.cityu.edu.hk
+  moodleUsername: admin
+  #moodlePassword: bitnami
+
+
+
+  ingress:
+    enabled: true
+    apiVersion: networking.k8s.io/v1
+    hostname: deep.cs.cityu.edu.hk
+    path: /test(/|$)(.*)
+    pathType: Prefix
+    annotations: 
+      cert-manager.io/cluster-issuer: selfsigned-issuer
+      nginx.ingress.kubernetes.io/rewrite-target: /$2
+    tls: true
+    ingressClassName: public
