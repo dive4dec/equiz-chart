@@ -41,7 +41,7 @@ sudo helm install release1 --debug . --values values.yaml --namespace=my_namespa
 ```
 Access it at your configured url, please note that the moodle instance may takes few minutes to initialize.
 
-# Moodle configuration
+## Moodle configuration
 
 After moodle is initialized, go to Site administration and perform the following configuration.
 
