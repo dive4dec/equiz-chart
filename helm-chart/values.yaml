@@ -1,29 +1,25 @@
 moodle:
   image:
-    #registry: docker.io
-    registry: localhost:32000
-    #repository: yzhou442/equiz-test2
-    repository: equiz-cwt
-    #tag: v10
+    registry: docker.io
+    repository: yzhou442/equiz
     tag: latest
     digest: ""
-    #pullPolicy: IfNotPresent
     pullPolicy: Always
     pullSecrets: []
     debug: false
-    websiteUrl: deep.cs.cityu.edu.hk/equiztest4
+    websiteUrl: deep.cs.cityu.edu.hk/equiz
     reverseProxy: '"true"'
     sslProxy: '"true"'
   
   moodleEmail: equiz@cs.cityu.edu.hk
-  moodleUsername: admin
-  moodlePassword: admin123456
+  moodleUsername: admin-custom
+  moodlePassword: admin123
   
   ingress:
     enabled: true
     apiVersion: networking.k8s.io/v1
     hostname: deep.cs.cityu.edu.hk
-    path: /equiztest4(/|$)(.*)
+    path: /equiz(/|$)(.*)
     pathType: Prefix
     annotations: 
       cert-manager.io/cluster-issuer: selfsigned-issuer
