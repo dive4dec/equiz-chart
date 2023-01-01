@@ -9,13 +9,13 @@ Build the Jobeinabox image from https://github.com/dive4dec/jobeinabox<br />
 
 Push the images to localhost or dockerhub<br />
 
-Exmaple of building the moodle image and push to localhost:
+Example of building the moodle image and push to localhost:
 ```
 docker build --no-cache -t localhost:32000/bitnami_moodle_custom:test1 .
 docker push localhost:32000/bitnami_moodle_custom:test1
 ```
 
-Exmaple of building the moodle image and push to dockerhub:
+Example of building the moodle image and push to dockerhub:
 ```
 docker build --no-cache -t <dockerhub account>/<dockerhub repo>:<tag> .
 docker push <dockerhub account>/<dockerhub repo>:<tag>
@@ -25,7 +25,7 @@ docker push <dockerhub account>/<dockerhub repo>:<tag>
 
 Go to helm-chart folder
 
-Modify the following filed in the `helm_chart/values.yaml` to your own Moodle and Jobeinabox image name, domain name, URL.
+Modify the following field in the `helm_chart/values.yaml` to your own Moodle and Jobeinabox image name, domain name, URL.
 ```
 #Images
 moodle.image.registry
