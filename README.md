@@ -15,6 +15,12 @@ docker build --no-cache -t localhost:32000/bitnami_moodle_custom:test1 .
 docker push localhost:32000/bitnami_moodle_custom:test1
 ```
 
+Exmaple of building the moodle image and push to dockerhub:
+```
+docker build --no-cache -t <dockerhub account>/<dockerhub repo>:<tag> .
+docker push <dockerhub account>/<dockerhub repo>:<tag>
+```
+
 ## Setup a Moodle instance using Kubernetes
 
 Go to helm-chart folder
@@ -60,6 +66,11 @@ Modify the field "Jobe API-key" to be blank.
 
 Go to General->Security->HTTP security,
 Modify the field "cURL blocked hosts list" to be blank.
+
+### Maxima
+Go to Plugins->Question types->STACK
+Modify the field "Maxima version" to the latest version (currently 5.44.0).
+
 
 
 
