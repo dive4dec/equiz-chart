@@ -21,7 +21,12 @@ wget https://github.com/gjb2048/moodle-format_topcoll/archive/refs/tags/V400.1.2
 unzip /bitnami/moodle/course/format/topcoll/V400.1.2.zip -d /bitnami/moodle/course/format/topcoll/ \&\& \
 mv /bitnami/moodle/course/format/topcoll/moodle-format_topcoll-400.1.2/* /bitnami/moodle/course/format/topcoll/ \&\& \
 rm -r /bitnami/moodle/course/format/topcoll/moodle-format_topcoll-400.1.2' /opt/bitnami/scripts/libmoodle.sh
-
+# Install OU multiple response plugin
+RUN sed -i '140 i mkdir -p /bitnami/moodle/question/type/oumultiresponse \&\& \
+wget https://moodle.org/plugins/download.php/21651/qtype_oumultiresponse_moodle39_2020031600.zip -P /bitnami/moodle/question/type/oumultiresponse/ \&\& \
+unzip /bitnami/moodle/question/type/oumultiresponse/qtype_oumultiresponse_moodle39_2020031600.zip -d /bitnami/moodle/question/type/oumultiresponse/ \&\& \
+mv /bitnami/moodle/question/type/oumultiresponse/oumultiresponse/* /bitnami/moodle/question/type/oumultiresponse/ \&\& \
+rm -r /bitnami/moodle/question/type/oumultiresponse/oumultiresponse' /opt/bitnami/scripts/libmoodle.sh
 # Fix LTI issues
 COPY commands.sh /
 RUN chmod 777 commands.sh
