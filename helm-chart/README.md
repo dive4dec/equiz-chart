@@ -1,1 +1,1 @@
-This chart was created by Kompose
+An E-quiz Helm Chart based on moodle with coderunner, moodle stack.
