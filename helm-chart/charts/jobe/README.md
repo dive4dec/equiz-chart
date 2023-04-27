@@ -1,7 +1,7 @@
 # Jobeinabox helm chart
 
 
-## Deploy the chart as stone-alone app
+## Deploying the chart as stone-alone app
 
 Change the `jobeImage` value in `values.yaml` for configuring your own image name
 
@@ -16,7 +16,7 @@ sudo helm install release1 --debug . --values values.yaml --namespace=my_namespa
 
 ## Using the chart as Subchart
 
-Modify the following field in the root `values.yaml` to use your jobeinabox image
+Modify the following field in the `values.yaml` of parent chart to use your jobeinabox image
 ```
 jobe:
   jobeImage: <your image name>
