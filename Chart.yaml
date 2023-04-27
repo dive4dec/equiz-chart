@@ -1,0 +1,10 @@
+name: equiz
+description: An equiz Helm Chart based on Bitnami Moodle integrated with Coderunner, STACK, Jobeinabox etc.
+version: 0.0.1
+apiVersion: v1
+keywords:
+  - moodle
+  - jobeinabox
+sources: 
+  - https://github.com/dive4dec/equiz-chart
+home: https://github.com/dive4dec/equiz-chart

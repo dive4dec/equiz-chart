@@ -2,3 +2,6 @@ dependencies:
   - name: moodle
     version: 14.3.2
     repository: https://charts.bitnami.com/bitnami
+  - name: jobe
+    version: 0.0.1
+    repository: https://dive4dec.github.io/Jobeinabox-chart

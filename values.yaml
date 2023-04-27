@@ -1,3 +1,12 @@
+extraEnvVars:
+  - name: websiteUrl
+    value: deep.cs.cityu.edu.hk/equiz111
+  - name: reverseProxy
+    value: "true"
+  - name: sslProxy
+    value: "true"
+
+
 moodle:
   image:
     registry: docker.io
@@ -7,19 +16,17 @@ moodle:
     pullPolicy: Always
     pullSecrets: []
     debug: false
-    websiteUrl: deep.cs.cityu.edu.hk/equiz
-    reverseProxy: '"true"'
-    sslProxy: '"true"'
+
   
   moodleEmail: equiz@cs.cityu.edu.hk
   moodleUsername: admin-custom
   moodlePassword: admin123
-  
+
   ingress:
     enabled: true
     apiVersion: networking.k8s.io/v1
     hostname: deep.cs.cityu.edu.hk
-    path: /equiz(/|$)(.*)
+    path: /equiz111(/|$)(.*)
     pathType: Prefix
     annotations: 
       cert-manager.io/cluster-issuer: letsencrypt-prod

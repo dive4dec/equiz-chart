@@ -23,9 +23,13 @@ docker push <dockerhub account>/<dockerhub repo>:<tag>
 
 ## Setup a Moodle instance using Kubernetes
 
-Go to helm-chart folder
+### Build subchart dependencies
+Equiz helm chart is based on Bitnami Moodle, before install the instance, build subchart dependencies by running the following command in terminal:
+```
+helm dependency update
+```
 
-Modify the following field in the `helm_chart/values.yaml` to your own Moodle and Jobeinabox image name, domain name, URL.
+Modify the following field in the `values.yaml` to your own Moodle and Jobeinabox image name, domain name, URL.
 ```
 #Images
 moodle.image.registry
