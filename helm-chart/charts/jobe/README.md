@@ -19,7 +19,7 @@ sudo helm install release1 --debug . --values values.yaml --namespace=my_namespa
 Modify the following field in the root `values.yaml` to use your jobeinabox image
 ```
 jobe:
-  jobeImage: <you image name>
+  jobeImage: <your image name>
 ```
 Then, deploy the parent chart
 
