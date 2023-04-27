@@ -1,7 +1,7 @@
 # Jobeinabox helm chart
 
 
-## Deploy the chart as stonealone app
+## Deploy the chart as stone-alone app
 
 Change the `jobeImage` value in `values.yaml` for configuring your own image name
 
@@ -14,13 +14,14 @@ Install a new helm release
 sudo helm install release1 --debug . --values values.yaml --namespace=my_namespace
 ```
 
-## Using the chart as subchart
+## Using the chart as Subchart
 
 Modify the following field in the root `values.yaml` to use your jobeinabox image
 ```
 jobe:
   jobeImage: <you image name>
 ```
+Then, deploy the parent chart
 
 ## Testing the chart
 After deploying the chart, enter the pod, and run
