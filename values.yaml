@@ -1,9 +1,9 @@
 extraEnvVars:
-  - name: websiteUrl
+  - name: MOODLE_HOST
     value: deep.cs.cityu.edu.hk/equiz111
-  - name: reverseProxy
+  - name: MOODLE_REVERSEPROXY
     value: "true"
-  - name: sslProxy
+  - name: MOODLE_SSLPROXY
     value: "true"
 
 
