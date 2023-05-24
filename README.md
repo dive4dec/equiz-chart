@@ -1,35 +1,19 @@
 # Equiz-chart
 Helm chart for E-Quiz.
 
-## Building and pushing the custom images
+## Setup a E-quiz instance using Kubernetes
 
-Build the docker image from the "docker" folder<br />
-
-Build the Jobeinabox image from https://github.com/dive4dec/jobeinabox<br />
-
-Push the images to localhost or dockerhub<br />
-
-Example of building the moodle image and push to localhost:
-```
-docker build --no-cache -t localhost:32000/bitnami_moodle_custom:test1 .
-docker push localhost:32000/bitnami_moodle_custom:test1
-```
-
-Example of building the moodle image and push to dockerhub:
-```
-docker build --no-cache -t <dockerhub account>/<dockerhub repo>:<tag> .
-docker push <dockerhub account>/<dockerhub repo>:<tag>
-```
-
-## Setup a Moodle instance using Kubernetes
+### Prerequisite
+- Kubernetes
+- Helm
 
 ### Build subchart dependencies
-Equiz helm chart is based on Bitnami Moodle, before install the instance, build subchart dependencies by running the following command in terminal:
+Equiz helm chart is based on Bitnami Moodle, before install the instance, Clone this repo into your machine and build subchart dependencies by running the following command in terminal:
 ```
 helm dependency update
 ```
 
-Modify the following field in the `values.yaml` to your own Moodle and Jobeinabox image name, domain name, URL.
+Modify the following field in the `values.yaml` to use your own domain name, URL, images, if applicable.
 ```
 #Images
 moodle.image.registry
@@ -51,11 +35,16 @@ Install a new helm release
 ```
 sudo helm install release1 --debug . --values values.yaml --namespace=my_namespace
 ```
-Access it at your configured url, please note that the moodle instance may takes few minutes to initialize.
+Access it at your configured url, please note that the E-quiz instance may takes few minutes to initialize.
 
-## Moodle configuration
+The default Login information for admin:
+```
+admin-custom
+admin123
+```
+## E-quiz moodle configuration
 
-After moodle is initialized, go to Site administration and perform the following configuration.
+After E-quiz is initialized, go to Site administration and perform the following configuration.
 
 ### LTI
 Go to Plugins->Authentication->Manage authentication, Enable LTI
@@ -75,7 +64,25 @@ Modify the field "cURL blocked hosts list" to be blank.
 Go to Plugins->Question types->STACK
 Modify the field "Maxima version" to the latest version (currently 5.44.0).
 
+## Building and pushing the custom images (if you want to use customized images)
 
+Build the docker image from the "docker" folder<br />
+
+Build the Jobeinabox image from https://github.com/dive4dec/jobeinabox<br />
+
+Push the images to localhost or dockerhub<br />
+
+Example of building the moodle image and push to localhost:
+```
+docker build --no-cache -t localhost:32000/bitnami_moodle_custom:test1 .
+docker push localhost:32000/bitnami_moodle_custom:test1
+```
+
+Example of building the moodle image and push to dockerhub:
+```
+docker build --no-cache -t <dockerhub account>/<dockerhub repo>:<tag> .
+docker push <dockerhub account>/<dockerhub repo>:<tag>
+```
 
 
 
